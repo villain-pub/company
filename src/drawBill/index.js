@@ -1,5 +1,7 @@
 ///api/web/file/download?uuid=9c224123-6c81-3cfc-a0a3-49939197de29
-export default function drawBill(elementId,imageConfig,scale = 1, callback) {
+console.log(11)
+var Promise = require('es6-promise').Promise;
+ export default function drawBill(elementId,imageConfig,scale = 1, callback) {
     var canvas=document.getElementById(elementId);
     let text = canvas.innerHTML;
     var ctx=canvas.getContext("2d");
@@ -53,7 +55,7 @@ export default function drawBill(elementId,imageConfig,scale = 1, callback) {
     function drawText() {
         ctx.font=`${200 * scale}px Arial`;
         ctx.fillStyle = '#ffffff';
-        ctx.fillText(text,-190 * scale,1000 * scale);
+        ctx.fillText(text,90 * scale,1000 * scale);
     }
     function loadImg(img,key) {
         return new Promise((resolve, reject) => {
