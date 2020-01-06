@@ -1,6 +1,7 @@
 ///api/web/file/download?uuid=9c224123-6c81-3cfc-a0a3-49939197de29
-export default function drawCanvas(elementId,imageConfig,scale = 1, callback) {
+export default function drawBill(elementId,imageConfig,scale = 1, callback) {
     var canvas=document.getElementById(elementId);
+    let text = canvas.innerHTML;
     var ctx=canvas.getContext("2d");
     let imgsFn = [];
     Object.keys(imageConfig).forEach(key =>{
@@ -13,6 +14,7 @@ export default function drawCanvas(elementId,imageConfig,scale = 1, callback) {
         res.forEach(item => {
             drawImg(item.image,item.key)
         });
+        drawText();
         callback({data:canvas.toDataURL("image/png")});
     }).catch(err =>{
         callback({error:err})
@@ -47,6 +49,11 @@ export default function drawCanvas(elementId,imageConfig,scale = 1, callback) {
         ctx.drawImage(img, 0, 0, img.width ,img.height,dx, dy, width * scale, height *scale);
         ctx.restore();
         ctx.closePath();
+    }
+    function drawText() {
+        ctx.font=`${200 * scale}px Arial`;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText(text,-190 * scale,1000 * scale);
     }
     function loadImg(img,key) {
         return new Promise((resolve, reject) => {

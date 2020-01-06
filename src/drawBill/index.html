@@ -9,16 +9,18 @@
 <div id="demo">
     <img src="" alt="" id="demo-img">
 </div>
-<canvas  id="canvas" style="display: none;"></canvas >
+<canvas  id="canvas" style="display: none;">
+    与时俱进
+</canvas >
 <script>
-drawCanvas('canvas',{
+drawBill('canvas',{
     bg:{
-        src:'./imgs/share-1.png'
+        src:'./imgs/share.png'
     },
     avatar:{
         src:'https://a.gcb365.com/api/web/file/download?uuid=9c224123-6c81-3cfc-a0a3-49939197de29'
     }
-},.5,function (res) {
+},1,function (res) {
     if(res.data) {
         document.querySelector('#demo-img').src= res.data;
     }
