@@ -1,0 +1,27 @@
+{
+  "name": "gcb-web-log",
+  "version": "1.0.0",
+  "description": "工程宝埋点",
+  "main": "src/log/index.js",
+  "scripts": {
+      "build": "webpack --mode production ",
+      "build:drawBill": "webpack --mode production --a package=drawBill",
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "md5": "^2.2.1",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-umd": "^7.7.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "webpack-cli": "^3.3.10"
+  }
+}

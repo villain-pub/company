@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./index.js"></script>
+</head>
+<body>
+<div id="demo">
+    <img src="" alt="" id="demo-img">
+</div>
+<canvas  id="canvas" style="display: none;"></canvas >
+<script>
+window.drawBill('canvas',{
+    bg:{
+        src:'./imgs/share-1.png'
+    },
+    avatar:{
+        src:'https://a.gcb365.com/api/web/file/download?uuid=9c224123-6c81-3cfc-a0a3-49939197de29'
+    }
+},.5,function (res) {
+    console.log(res);
+    if(res.data) {
+        document.querySelector('#demo-img').src= res.data;
+    }
+    if(res.error){
+        // 错误提示
+    }
+
+})
+</script>
+</body>
+</html>

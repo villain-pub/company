@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+</head>
+<body>
+<button onclick="submit()">提交按钮埋点</button>
+<script>
+    var gcbLog = new GCBLog({
+        appName: 1,
+        source: 4,
+        host: "https://wap.gcb365.com/web",
+    });
+    gcbLog.setData({
+        enterPageTime: new Date()
+    });
+    function submit() {
+        gcbLog.setData({
+            buridType:2,
+            eventFlag:'gcb-web/testPage/提交按钮埋点',
+            x: 1,
+        }).send();
+        gcbLog.setData({
+            enterPageTime: new Date(),
+        });
+    }
+
+</script>
+</body>
+</html>
